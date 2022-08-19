@@ -1,0 +1,101 @@
+<style>
+    #treeview .jstree-leaf > .jstree-icon, #treeview .jstree-leaf .jstree-themeicon {
+        display: inline-block;
+    }
+
+    #treeview .jstree-themeicon {
+        display: inline-block;
+    }
+</style>
+<div class="row animated fadeInRight">
+    <div class="col-md-3" id="left-content">
+        <div class="box box-success">
+            <div class="panel-heading">
+                目录
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-12 col-sm-8">
+                    <span class="text-muted"><input type="checkbox" name="" id="expandall"/> <label for="expandall"><small>展开全部</small></label></span>
+
+                    <div id="treeview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box box-info">
+            <div class="panel-heading">
+                信息
+            </div>
+            <div class="panel-body">
+                <h4>Size: <small id="info-size">Null</small></h4>
+                <h4>Update Time: <small id="info-update_time">Null</small></h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9 col-xs-12" id="right-content">
+        <div class="panel panel-default panel-intro panel-nav">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-list"></i>列表</a></li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="one">
+                        <div class="widget-body no-padding">
+                            <div id="toolbar" class="toolbar">
+                                {:build_toolbar('refresh,del')}
+
+                                <a href="javascript:;" class="btn btn-default btn-channel hidden-xs hidden-sm"><i class="fa fa-bars"></i></a>
+                            </div>
+                            <table id="table" class="table table-striped table-bordered table-hover" width="100%"
+                                   data-operate-detail="{:$auth->check('general/logs/detail')}",
+                                   data-operate-del="{:$auth->check('general/logs/del')}"
+                            >
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    /**
+    var nodeData = [
+        {
+            "id": "a",
+            "text": "111",
+            "type": "folder",
+            "children": [
+                {
+                    "id": "a/b",
+                    "text": "222",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "id": "a/b/c.text",
+                            "text": "text",
+                            "type": 'file',
+                            "state": {
+                                "selected": true
+                            },
+                        }
+                    ]
+                }
+                , {
+                    "id": "c",
+                    "text": "333",
+                    "type": "file",
+                }
+            ]
+        }
+    ];
+    **/
+    var nodeData = {:json_encode($directory);};
+</script>

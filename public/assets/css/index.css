@@ -1,0 +1,203 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Roboto", "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", BlinkMacSystemFont, -apple-system, "Segoe UI", "Microsoft Yahei", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+    color: #474157;
+}
+
+a:hover,
+a:focus {
+    color: #474157;
+}
+
+hr {
+    max-width: 100px;
+    margin: 25px auto 0;
+    border-width: 1px;
+    border-color: rgba(34, 34, 34, 0.1);
+}
+
+hr.light {
+    border-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.navbar-default {
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #474157;
+}
+
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: #474157;
+}
+
+.navbar-default .navbar-header .navbar-toggle {
+    font-size: 12px;
+    color: #474157;
+    padding: 8px 10px;
+}
+
+.navbar-default .nav > li > a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #7a798c;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus:hover {
+    color: #474157;
+}
+
+.navbar-default .nav > li.active > a,
+.navbar-default .nav > li.active > a:focus {
+    color: #474157 !important;
+    background-color: transparent;
+}
+
+.navbar-default .nav > li.active > a:hover,
+.navbar-default .nav > li.active > a:focus:hover {
+    background-color: transparent;
+}
+
+#mainbody {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    overflow-y: hidden;
+    background: #f1f6fd;
+    color: #474157;
+    height: calc(100vh - 61px);
+}
+
+#mainbody .index-text {
+    text-align: center;
+    padding: 250px 0 50px;
+    position: relative;
+    height: 100vh;
+}
+
+#mainbody .index-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #171347
+}
+
+#mainbody .index-gallery {
+    text-align: center;
+    padding: 200px 0 50px;
+    position: relative;
+}
+
+@media (max-height: 500px) {
+    #mainbody {
+        height: inherit;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-default {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #mainbody .index-text {
+        text-align: left;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .navbar-default {
+        background-color: #f1f6fd;
+        border-color: #f1f6fd;
+    }
+
+    .navbar-default .navbar-collapse {
+        background: #f1f6fd;
+        box-shadow: 5px 9px 5px rgba(0, 0, 0, 0.07);
+    }
+
+    #mainbody {
+        height: unset;
+    }
+
+    #mainbody .index-text {
+        padding: 130px 0 0 0;
+        height: calc(100vh - 261px);
+    }
+
+    #mainbody .index-gallery {
+        padding: 30px 0 50px 0;
+    }
+
+    #mainbody .index-text h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    background-color: #222222;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.bg-primary {
+    background: #fdcc52;
+    background: -webkit-linear-gradient(#fdcc52, #fdc539);
+    background: linear-gradient(#fdcc52, #fdc539);
+}
+
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 300px;
+}
+
+.btn-xl {
+    margin-top: 20px;
+    padding: 10px 45px;
+    font-size: 14px;
+}

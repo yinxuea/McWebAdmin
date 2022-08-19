@@ -1,0 +1,52 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[time]" type="text" value="{:$row.time?datetime($row.time):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user" class="form-control" name="row[user]" type="number" value="{$row.user|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Wid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-wid" class="form-control" name="row[wid]" type="number" value="{$row.wid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('X')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-x" class="form-control" name="row[x]" type="number" value="{$row.x|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Y')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-y" class="form-control" name="row[y]" type="number" value="{$row.y|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Z')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-z" class="form-control" name="row[z]" type="number" value="{$row.z|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Message')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-message" class="form-control" name="row[message]" type="text" value="{$row.message|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

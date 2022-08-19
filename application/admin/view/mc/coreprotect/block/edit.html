@@ -1,0 +1,82 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[time]" type="text" value="{:$row.time?datetime($row.time):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user" class="form-control" name="row[user]" type="number" value="{$row.user|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Wid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-wid" class="form-control" name="row[wid]" type="number" value="{$row.wid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('X')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-x" class="form-control" name="row[x]" type="number" value="{$row.x|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Y')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-y" class="form-control" name="row[y]" type="number" value="{$row.y|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Z')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-z" class="form-control" name="row[z]" type="number" value="{$row.z|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-type" class="form-control" name="row[type]" type="number" value="{$row.type|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Data')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-data" class="form-control" name="row[data]" type="number" value="{$row.data|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Meta')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-meta" class="form-control" name="row[meta]" type="text" value="{$row.meta|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Blockdata')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-blockdata" class="form-control" name="row[blockdata]" type="text" value="{$row.blockdata|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Action')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-action" class="form-control" name="row[action]" type="number" value="{$row.action|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rolled_back')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rolled_back" class="form-control" name="row[rolled_back]" type="number" value="{$row.rolled_back|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
