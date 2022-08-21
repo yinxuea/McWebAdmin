@@ -41,28 +41,49 @@ Wscript.Echo (objProc.LoadPercentage)"
         return "CPU使用率: ".$usage[0]. "%";
     }
 
+    /**
+     * 获取内存使用
+     * @return array|string|void
+     */
     public function getMon(){
-        $out = '';
-        $info = exec('wmic os get TotalVisibleMemorySize,FreePhysicalMemory',$out,$status);
-        $phymem = preg_replace ( "/\s(?=\s)/","\\1",$out[1]);
-        $phymem_array = explode(' ',$phymem);
-        $freephymem = round($phymem_array[0]/1024/1024,2);
-        $totalphymem = round($phymem_array[1]/1024/1024,2);
-        return "运行内存:       ". ($totalphymem - $freephymem) ." GB/". $totalphymem . " GB";
+        switch (PHP_OS)
+        {
+            case "WINNT":
+            case "Windows":
+                $out = '';
+                $info = exec('wmic os get TotalVisibleMemorySize,FreePhysicalMemory',$out,$status);
+                $phymem = preg_replace ( "/\s(?=\s)/","\\1",$out[1]);
+                $phymem_array = explode(' ',$phymem);
+                $freephymem = round($phymem_array[0]/1024/1024,2);
+                $totalphymem = round($phymem_array[1]/1024/1024,2);
+                return "运行内存:". ($totalphymem - $freephymem) ." GB/". $totalphymem . " GB";
+            case "Linux":
+                return "暂不支持linux";
+
+        }
+
     }
 
     public function getRunTime(){
-        $out = '';
-        $info = exec('wmic os get lastBootUpTime,LocalDateTime',$out,$status);
-        $datetime_array = explode('.',$out[1]);
-        $dt_array = explode(' ',$datetime_array[1]);
-        $localtime = substr($datetime_array[1],-14);
-        $boottime = $datetime_array[0];
-        $uptime = strtotime($localtime) - strtotime($datetime_array[0]);
-        $day=floor(($uptime)/86400);
-        $hour=floor(($uptime)%86400/3600);
-        $minute=floor(($uptime)%86400/60);
-        return "已运行: ".$day."天".$hour."小时".$minute."分钟";
+        switch (PHP_OS)
+        {
+            case "WINNT":
+            case "Windows":
+                $out = '';
+                $info = exec('wmic os get lastBootUpTime,LocalDateTime',$out,$status);
+                $datetime_array = explode('.',$out[1]);
+                $dt_array = explode(' ',$datetime_array[1]);
+                $localtime = substr($datetime_array[1],-14);
+                $boottime = $datetime_array[0];
+                $uptime = strtotime($localtime) - strtotime($datetime_array[0]);
+                $day=floor(($uptime)/86400);
+                $hour=floor(($uptime)%86400/3600);
+                $minute=floor(($uptime)%86400/60);
+                return "已运行: ".$day."天".$hour."小时".$minute."分钟";
+            case "Linux":
+                return "暂不支持linux";
+        }
+
     }
 
     public function getCpu(){
@@ -72,10 +93,7 @@ Wscript.Echo (objProc.LoadPercentage)"
             case "Windows":
                 return $this->getCpuUsage();
             case "Linux":
-                exec("top -n 1| grep id| awk {'print $8'}", $out);
-                $cpu_usage = 100 - $out[0]; //还有这么多可用
-                $ret = array('cpu'=>$cpu_usage);
-                return $ret;
+                return "暂不支持linux";
         }
     }
 
