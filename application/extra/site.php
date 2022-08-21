@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '我的网站',
+  'name' => 'MC后台管理页面',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.17',

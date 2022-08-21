@@ -28,8 +28,19 @@ class Authme extends Model
 
     ];
     
+    public function getLastloginAttr($value){
+       return $value/1000;
+    }
 
-    
+    public function getRegdateAttr($value){
+        return $value/1000;
+    }
+
+    public function searchLastloginTimeAttr($query,$value){
+        $query->whereBetweenTime('lastlogin',$value[0]*1000,$value[1]*1000);
+
+    }
+
 
 
 

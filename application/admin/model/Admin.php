@@ -31,4 +31,5 @@ class Admin extends Model
         return $encrypt($password . $salt);
     }
 
+
 }
